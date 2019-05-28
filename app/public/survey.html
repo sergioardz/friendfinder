@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+    select { 
+        font-size: 13px;
+        color: gray;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2>Survey Questions</h2>
+        <hr>
+        <h4><strong>About you</strong></h4>
+        <h5>Name (required)</h5>
+        <input type="text" id="name" class="form-control" required>
+        <br>
+        <h5>Link to photo (required)</h5>
+        <input type="text" id="photo" class="form-control" required>
+        <hr>
+        <h5><strong>Question 1</strong></h5>
+        <h6>Which of the following qualities describe you well: ?</h6>
+        <select data-placeholder="" class="chosen-select" id="q1">
+            <option value>Select an Option</option>
+            <option value="1">1 (Introvert)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Extrovert)</option>
+        </select>
+        <hr>
+        <h5><strong>Question 2</strong></h5>
+        <h6>Do you think friends can be of great influence in your life?</h6>
+        <select data-placeholder="" class="chosen-select" id="q2">
+            <option value>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <hr>
+        <h5><strong>Question 3</strong></h5>
+        <h6>Do you think friendship is supposed to last for a lifetime?</h6>
+        <select data-placeholder="" class="chosen-select" id="q3">
+            <option value>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <hr>
+        <h5><strong>Question 4</strong></h5>
+        <h6>Do You enjoy traveling and experiencing new things?</h6>
+        <select data-placeholder="" class="chosen-select" id="q4">
+            <option value>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <hr>
+        <h5><strong>Question 5</strong></h5>
+        <h6>Do You enjoy gossiping, but only if it is harmless?</h6>
+        <select data-placeholder="" class="chosen-select" id="q5">
+            <option value>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <hr>
+        <h5><strong>Question 6</strong></h5>
+        <h6>I see myself as practical, conventional.</h6>
+        <select data-placeholder="" class="chosen-select" id="q6">
+            <option value>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <hr>
+        <h5><strong>Question 7</strong></h5>
+        <h6>I see myself as anxious, easily upset.</h6>
+        <select data-placeholder="" class="chosen-select" id="q7">
+            <option value>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <hr>
+        <h5><strong>Question 8</strong></h5>
+        <h6>I prefer indoor activity over outdoor activity.</h6>
+        <select data-placeholder="" class="chosen-select" id="q8">
+            <option value>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <hr>
+        <h5><strong>Question 9</strong></h5>
+        <h6>Do You like to take risks and challenges excite you?</h6>
+        <select data-placeholder="" class="chosen-select" id="q9">
+            <option value>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <hr>
+        <h5><strong>Question 10</strong></h5>
+        <h6>You are the first to take charge in social gatherings or group projects.</h6>
+        <select data-placeholder="" class="chosen-select" id="q10">
+            <option value>Select an Option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-lg btn-primary btn-block" id="submit">
+            <i class="fa fa-check-circle"></i> Submit
+        </button>
+        <hr>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <a href="/api/friends">API Friends List</a>
+                |
+                <a href="/">Github Repo</a>
+            </p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="">
+    </script>
+
+</body>
+
+</html>
