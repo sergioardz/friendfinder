@@ -11,7 +11,7 @@
 </head>
 
 <style>
-    select { 
+    select {
         font-size: 13px;
         color: gray;
     }
@@ -149,11 +149,33 @@
             <p>
                 <a href="/api/friends">API Friends List</a>
                 |
-                <a href="/">Github Repo</a>
+                <a href="https://github.com/sergioardz79/friendfinder">Github Repo</a>
             </p>
         </div>
     </footer>
-    <script type="text/javascript" src="">
+    <script type="text/javascript">
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+            var userData = {
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
+            $.post("/api/friends", userData, function() {
+                alert("new friend added succesfully");
+            });
+        });
     </script>
 
 </body>
