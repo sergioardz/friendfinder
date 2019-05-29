@@ -15,9 +15,6 @@
         font-size: 13px;
         color: gray;
     }
-    img {
-        align-content: center;
-    }
 </style>
 
 <body>
@@ -159,14 +156,14 @@
     <div id="results-modal" class="modal fade in" role="dialog">
         <div class="modal-dialog">
 
-
+            <!-- Modal -->
             <div class="modal-content">
                 <div class="modal-header">
                     <h2 class="modal-title"><strong>Your Best Match is: </strong></h2>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <h2 id="match-name"></h2>
+                    <h4 id="match-name"></h4>
                     <img id="match-img" src="https://via.placeholder.com/150" alt="">
                 </div>
                 <div class="modal-footer">
@@ -178,8 +175,16 @@
     </div>
 
     <script type="text/javascript">
+        // CSS Attributes for the images using jQuery
+        $("#match-img").css("height", "400");
+        $("#match-img").css("width", "auto");
+        $("#match-img").css("display", "block");
+        $("#match-img").css("margin-left", "auto");
+        $("#match-img").css("margin-right", "auto");
+        // On click event to 1st Post the info captured in the form to the api friends and 2nd to display the modal after going through the logic and assign a best match for the user
         $("#submit").on("click", function (event) {
             event.preventDefault();
+            // Short function to prevent user to leave empty fields either for name, link to image or any unanswered questions
             function validateForm() {
                 var isValid = true;
                 $(".form-control").each(function () {
@@ -195,6 +200,7 @@
                 return isValid;
             }
             if (validateForm()) {
+                // Variable to capture the info from the Form
                 var userData = {
                     name: $("#name").val(),
                     photo: $("#photo").val(),
@@ -211,9 +217,11 @@
                         $("#q10").val()
                     ]
                 };
+                // Ajax call to post the info from the previous variable to the api friends
                 $.post("/api/friends", userData, function (data) {
                     $("#match-name").text(data.name);
                     $("#match-img").attr("src", data.photo);
+                    // jQuery to display modal
                     $("#results-modal").modal("toggle");
                 });
             } else {
